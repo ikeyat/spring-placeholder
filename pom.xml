@@ -69,12 +69,25 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>java</goal>
+                            <goal>exec</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.example.placeholdersample.PlaceholderExample</mainClass>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>-Dsysprop.key1=sysprop.value1</argument>
+                        <argument>-Dsysprop.key2=sysprop.value2</argument>
+                        <argument>-classpath</argument>
+                        <!-- automatically creates the classpath using all project dependencies,
+                             also adding the project build directory -->
+                        <classpath/>
+                        <argument>com.example.placeholdersample.PlaceholderExample</argument>
+                    </arguments>
+                    <environmentVariables>
+                        <ENV_KEY1>ENV_VALUE1</ENV_KEY1>
+                        <ENV_KEY2>ENV_VALUE2</ENV_KEY2>
+                    </environmentVariables>
                 </configuration>
             </plugin>
         </plugins>
