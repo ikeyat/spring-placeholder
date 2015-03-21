@@ -4,3 +4,5 @@ Try it!
 ```shell-session
 mvn install
 mvn exec:exec
+```
+See INFO log on stdout.
