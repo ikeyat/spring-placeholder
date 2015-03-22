@@ -22,12 +22,12 @@ public class PlaceholderExample {
                 = context.getBean("propertyPlaceholderAccessor", PropertyPlaceholderAccessor.class);
         logger.info(accessor.convert("prop.key1=${prop.key1}"));
         logger.info(accessor.convert("prop.key2=${prop.key2}"));
-        logger.info(accessor.convert("prop.key3=${prop.notfound}"));
+        logger.info(accessor.convert("prop.key3=${prop.key3} #expected not to be replaced"));
         logger.info(accessor.convert("sysprop.key1=${sysprop.key1}"));
         logger.info(accessor.convert("sysprop.key2=${sysprop.key2}"));
-        logger.info(accessor.convert("sysprop.key3=${sysprop.notfound}"));
+        logger.info(accessor.convert("sysprop.key3=${sysprop.key3} #expected not to be replaced"));
         logger.info(accessor.convert("ENV_KEY1=${ENV_KEY1}"));
         logger.info(accessor.convert("ENV_KEY2=${ENV_KEY2}"));
-        logger.info(accessor.convert("ENV_KEY3=${ENV_NOTFOUND}"));
+        logger.info(accessor.convert("ENV_KEY3=${ENV_KEY3} #expected not to be replaced"));
     }
 }
